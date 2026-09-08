@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buku Tamu - Akmalyah Sholiha Salsabila</title>
+  <!-- Menghubungkan ke CSS gabungan -->
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header Nama -->
+    <header class="header">
+      <span class="heart-icon">📖</span>
+      <h1>Buku Tamu</h1>
+      <p class="subtitle">Tinggalkan pesan atau sapaan untuk Alyah!</p>
+    </header>
+
+    <!-- Form Buku Tamu -->
+    <section class="guestbook-section">
+      <form id="guestbook-form">
+        <div class="form-group">
+          <label for="nama">Nama Lengkap *</label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama kamu" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="contoh@gmail.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pesan">Pesan / Kesan *</label>
+          <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan manis kamu di sini..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btn-submit">Kirim Pesan 💌</button>
+      </form>
+
+      <!-- Pesan Notifikasi -->
+      <div id="status-message"></div>
+
+      <div style="text-align: center;">
+        <a href="../index.html" class="back-btn">← Kembali ke Beranda</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p><i>Website profil ini dibuat khusus untuk latihan HTML & CSS</i></p>
+    </footer>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/a/macros/smk.belajar.id/s/AKfycbzYN5xUP-Zns00WEpL95eLrwgUe6CFL5gjzQ3nA2ols5Aocu83sSRALnXVwp4ftsgL_7g/execPASTE_URL_WEB_APP_GOOGLE_SCRIPT_DI_SINI';
+    
+    const form = document.getElementById('guestbook-form');
+    const btnSubmit = document.getElementById('btn-submit');
+    const statusMsg = document.getElementById('status-message');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      btnSubmit.disabled = true;
+      btnSubmit.innerText = 'Mengirim...';
+      statusMsg.style.display = 'none';
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          btnSubmit.disabled = false;
+          btnSubmit.innerText = 'Kirim Pesan 💌';
+          
+          statusMsg.className = 'status-success';
+          statusMsg.innerText = 'Terima kasih! Pesan kamu berhasil terkirim. ✨';
+          statusMsg.style.display = 'block';
+
+          form.reset();
+        })
+        .catch(error => {
+          btnSubmit.disabled = false;
+          btnSubmit.innerText = 'Kirim Pesan 💌';
+          
+          statusMsg.className = 'status-error';
+          statusMsg.innerText = 'Gagal mengirim pesan. Silakan coba lagi.';
+          statusMsg.style.display = 'block';
+          
+          console.error('Error!', error.message);
+        });
+    });
+  </script>
+
+</body>
+</html>
