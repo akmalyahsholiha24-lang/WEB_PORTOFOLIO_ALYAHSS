@@ -17,7 +17,9 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
+/* ==========================================
+   HEADER
+   ========================================== */
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -39,7 +41,9 @@ body {
   font-size: 15px;
 }
 
-/* Grid Menu Navigasi */
+/* ==========================================
+   GRID MENU NAVIGASI (INDEX)
+   ========================================== */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -80,7 +84,9 @@ body {
   color: #a56b83;
 }
 
-/* Section Perkenalan */
+/* ==========================================
+   SECTION PERKENALAN (INDEX)
+   ========================================== */
 .about-section {
   background: white;
   padding: 30px;
@@ -88,6 +94,7 @@ body {
   text-align: center;
   border: 2px solid #ffd0e2;
   margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(214, 92, 139, 0.05);
 }
 
 .profile-img {
@@ -121,7 +128,9 @@ body {
   font-weight: bold;
 }
 
-/* Section Sertifikat */
+/* ==========================================
+   SECTION SERTIFIKAT / AWARDS
+   ========================================== */
 .section-block {
   text-align: center;
   margin-bottom: 40px;
@@ -154,7 +163,9 @@ body {
   margin-bottom: 5px;
 }
 
-/* Kontak & Footer */
+/* ==========================================
+   KONTAK & BUTTONS
+   ========================================== */
 .contact-section {
   text-align: center;
   margin-bottom: 30px;
@@ -173,6 +184,7 @@ body {
 }
 
 .btn {
+  display: inline-block;
   text-decoration: none;
   color: white;
   background: linear-gradient(135deg, #f28db4, #d9578d);
@@ -180,6 +192,8 @@ body {
   border-radius: 20px;
   font-weight: 600;
   transition: 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -187,6 +201,116 @@ body {
   box-shadow: 0 5px 12px rgba(217, 87, 141, 0.3);
 }
 
+/* ==========================================
+   FORM BUKU TAMU
+   ========================================== */
+.guestbook-section {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 25px;
+  border: 2px solid #ffd0e2;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(214, 92, 139, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #d85a8c;
+  font-size: 14px;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ffd0e2;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #5a3045;
+  background-color: #fff9fc;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #c49ba9;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  border-color: #f29abb;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(242, 154, 187, 0.3);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #f28db4, #d9578d);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(217, 87, 141, 0.2);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(217, 87, 141, 0.35);
+}
+
+#status-message {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 15px;
+  display: none;
+  font-weight: 600;
+  text-align: center;
+  font-size: 14px;
+}
+
+.status-success {
+  background-color: #ffe3ee;
+  color: #d94f88;
+  border: 1px solid #ffd0e2;
+}
+
+.status-error {
+  background-color: #fce4e4;
+  color: #d9534f;
+  border: 1px solid #f7b6b6;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #a56b83;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #d85a8c;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
 footer {
   text-align: center;
   color: #a56b83;
